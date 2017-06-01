@@ -14,6 +14,7 @@
 		11730EF71ED83BFC00A0E330 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11730EF51ED83BFC00A0E330 /* LaunchScreen.storyboard */; };
 		118215211EDD3FAC00D54837 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118215201EDD3FAC00D54837 /* Model.swift */; };
 		11A565641EDBE70C005B2F01 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A565631EDBE70C005B2F01 /* TableViewCell.swift */; };
+		11C3A3861EDE973C00E3FAFA /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C3A3851EDE973C00E3FAFA /* DisplayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		11730EF81ED83BFC00A0E330 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		118215201EDD3FAC00D54837 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		11A565631EDBE70C005B2F01 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		11C3A3851EDE973C00E3FAFA /* DisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,9 +72,9 @@
 		118215221EDD448200D54837 /* Actors */ = {
 			isa = PBXGroup;
 			children = (
-				118215271EDD44DE00D54837 /* Controller */,
-				118215261EDD44D000D54837 /* View */,
 				118215231EDD449F00D54837 /* Model */,
+				118215261EDD44D000D54837 /* View */,
+				118215271EDD44DE00D54837 /* Controller */,
 			);
 			name = Actors;
 			sourceTree = "<group>";
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				11730EEE1ED83BFC00A0E330 /* ViewController.swift */,
+				11C3A3851EDE973C00E3FAFA /* DisplayViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11C3A3861EDE973C00E3FAFA /* DisplayViewController.swift in Sources */,
 				118215211EDD3FAC00D54837 /* Model.swift in Sources */,
 				11730EEF1ED83BFC00A0E330 /* ViewController.swift in Sources */,
 				11A565641EDBE70C005B2F01 /* TableViewCell.swift in Sources */,

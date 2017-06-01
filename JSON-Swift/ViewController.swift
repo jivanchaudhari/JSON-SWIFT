@@ -13,7 +13,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     @IBOutlet var actorsTableView: UITableView!
     
     var actorArray = [Actor]()
-   
+
+    var str :Int = 3
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -43,14 +45,14 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 do {
                     if let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as? NSDictionary{
                         //JSON PRINT..
-               
+               print(json)
                         if let actorsArray = json.value(forKey: "actors") as? NSArray {
                             
                             for actor in actorsArray {
                                 
                             if let actorsDic = actor as? NSDictionary {
                                 
-                                UserDefaults.standard.setValue(actorsDic, forKey: "actorsDetails")
+                              //  UserDefaults.standard.setValue(actorsDic, forKey: "actorsDetails")
                           
                                 let name: String = {
                                     if let name = actorsDic.value(forKey: "name")  {
@@ -91,6 +93,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         }
         task.resume()
 }
+   
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
         
@@ -100,7 +103,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")as! TableViewCell
         
         let actor = actorArray[indexPath.row]
@@ -121,4 +124,21 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         return cell
     }
-   }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        str = indexPath.row
+        let index = 0
+       let dataToPass = actorArray[index] as Actor
+        performSegue(withIdentifier: "push", sender:dataToPass)
+  
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       let controller = segue.destination as! DisplayViewController
+       
+        let actorData = actorArray[str]
+
+        controller.displayActor = actorData.nameString
+       controller.actorCountry = actorData.countryString
+        controller.actorImage = actorData.imageString
+}
+}

@@ -8,17 +8,20 @@
 
 import UIKit
 
-class Actor: NSObject {
+class Actor: NSObject{
+    
     
     let nameString : String!
     let countryString: String!
     let imageString: String!
-    
+   // static let sharedInstance = Actor(name:nameString,country:countryString,images:imageString)
+
     init(name:String,country:String,images:String) {
         self.nameString = name
         self.countryString = country
         self.imageString = images
         
+
     }
     
 }
